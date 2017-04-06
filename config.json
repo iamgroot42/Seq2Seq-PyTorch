@@ -6,21 +6,22 @@
   },
   "management": {
     "monitor_loss": 1000,
-    "print_samples": 20000
+    "print_samples": 20000,
+    "checkpoint_freq": 100000
   },
   "data": {
-    "src": "/data/lisatmp4/subramas/datasets/nmt/en-fr/data/europarl-v7.fr-en.tok.true.clean.fr",
-    "trg": "/data/lisatmp4/subramas/datasets/nmt/en-fr/data/europarl-v7.fr-en.tok.true.clean.en",
-    "test_src": "/data/lisatmp4/subramas/datasets/nmt/en-fr/data/newstest2011.fr.true.tok",
-    "test_trg": "/data/lisatmp4/subramas/datasets/nmt/en-fr/data/newstest2011.en.true.tok",
-    "batch_size": 80,
+    "src": "data/IITB.en-hi.en",
+    "trg": "data/IITB.en-hi.hi",
+    "test_src": "data/test.en",
+    "test_trg": "data/test.hi",
+    "batch_size": 32,
     "n_words_trg": 30000,
-    "valid_batch_size": 80,
+    "valid_batch_size": 32,
     "n_words_src": 30000,
     "max_src_length": 50,
     "max_trg_length": 50,
     "task": "translation",
-    "save_dir": "/data/lisatmp4/subramas/models/torch_seq2seq",
+    "save_dir": "output",
     "load_dir": false
   },
   "model": {

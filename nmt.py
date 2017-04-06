@@ -1,9 +1,3 @@
-#!/u/subramas/miniconda2/bin/python
-"""Main script to run things"""
-import sys
-
-sys.path.append('/u/subramas/Research/nmt-pytorch/')
-
 from data_utils import read_nmt_data, get_minibatch, read_config, hyperparam_string
 from model import Seq2Seq, Seq2SeqAttention, Seq2SeqFastAttention
 from evaluate import evaluate_model
@@ -230,16 +224,6 @@ for i in xrange(1000):
             )
 
             logging.info('Epoch : %d Minibatch : %d : BLEU : %.5f ' % (i, j, bleu))
-
-            logging.info('Saving model ...')
-
-            torch.save(
-                model.state_dict(),
-                open(os.path.join(
-                    save_dir,
-                    experiment_name + '__epoch_%d__minibatch_%d' % (i, j) + '.model'), 'wb'
-                )
-            )
 
     bleu = evaluate_model(
         model, src, src_test, trg,

@@ -139,6 +139,22 @@ def read_nmt_data(src, config, trg=None):
     return src, trg
 
 
+def read_test_data(src, n_words):
+    """Read test data from file."""
+    print 'Reading test data ...'
+    src_lines = []
+    with open(src, 'r') as f:
+        for ind, line in enumerate(f):
+            src_lines.append(line.strip().split())
+
+    print 'Constructing vocabulary ...'
+    src_word2id, src_id2word = construct_vocab( src_lines, n_words)
+
+    src = {'data': src_lines, 'word2id': src_word2id, 'id2word': src_id2word}
+    del src_lines
+    return src
+
+
 def read_summarization_data(src, trg):
     """Read data from files."""
     src_lines = [line.strip().split() for line in open(src, 'r')]

@@ -1,8 +1,3 @@
-"""Evaluation utils."""
-import sys
-
-sys.path.append('/u/subramas/Research/nmt-pytorch')
-
 import torch
 import torch.nn.functional as F
 from torch.autograd import Variable
