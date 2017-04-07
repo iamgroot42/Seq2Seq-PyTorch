@@ -22,7 +22,7 @@
     "max_trg_length": 50,
     "task": "translation",
     "save_dir": "output",
-    "load_dir": false
+    "load_dir": "moo.model"
   },
   "model": {
     "dim": 1000,
