@@ -135,7 +135,7 @@ def model_perplexity(
 def evaluate_model(
     model, src, src_test, trg,
     trg_test, config, src_valid=None, trg_valid=None,
-    verbose=True, metric='bleu'
+    verbose=True, metric='bleu', raw=False
 ):
     """Evaluate model."""
     preds = []
@@ -210,6 +210,8 @@ def evaluate_model(
                 print '--------------------------------------'
             ground_truths.append(['<s>'] + sentence_real[:index + 1])
 
+    if raw:
+        return preds
     return get_bleu(preds, ground_truths)
 
 
